@@ -11,7 +11,7 @@ function preload()
 }
 
 function setup() {
-	createCanvas(800, 300);
+	createCanvas(1200, 600);
 
 
 	engine = Engine.create();
@@ -22,11 +22,11 @@ function setup() {
 
 	Engine.run(engine);
 
-	ball = new paper(100,230,15)
-	ground = new Ground(400,250,800,10)
-	bottom = new DustBin(675,185,50,50)
-	side1 = new Side(620,185,10,100)
-	side2 = new Side(725,185,10,100)
+	paperobject = new paper(100,230,15)
+	ground = new Ground(600,550,1200,10)
+	bottom = new DustBin(1075,480,50,50)
+	rod1 = new Side(1020,480,10,100)
+	rod2 = new Side(1125,480,10,100)
 	                                                            
 
 }
@@ -35,18 +35,18 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background("white");
-  ball.display();
+  paperobject.display();
   ground.display();
   bottom.display();
-  side1.display();
-  side2.display();
+  rod1.display();
+  rod2.display();
   drawSprites();
 }
 
 
 function keyPressed() {
 	if (keyCode === UP_ARROW){
-	Matter.Body.applyForce(ball.Body,ball.Body.position,{x:34,y:-34});
+	Matter.Body.applyForce(paperobject.Body,paperobject.Body.position,{x:47,y:-47});
 	}
 }
 
